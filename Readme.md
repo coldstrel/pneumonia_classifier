@@ -22,9 +22,7 @@ __Serverless Deployment with RunPod__: Deploying the trained model as a serverle
 ## Conclusion
 The development of a pneumonia classifier using deep learning techniques, particularly with architectures like ResNet18, demonstrates the potential of AI in assisting medical diagnostics. By leveraging HPC resources, the training process becomes more efficient, allowing for the handling of large datasets and complex models. Deploying the trained model as a serverless application using RunPod further enhances accessibility and scalability, enabling healthcare professionals to utilize the tool in real-time clinical settings. Continued advancements in this field hold promise for improving patient outcomes through timely and accurate disease detection.
 
-<img src="imgs/image.png" alt="PNEUMONIA" width="500" height="500">
-
-
-<img src="imgs/image-1.png" alt="NORMAL" width="500" height="500">
-
+| PNEUMONIA  | NORMAL  |
+|------------|---------|
+| <img src="imgs/image.png" width="500" height="500"> | <img src="imgs/image-1.png" width="500" height="500"> |
 
