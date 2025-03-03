@@ -15,6 +15,8 @@ __Deep Learning in Medical Imaging__: Convolutional Neural Networks (CNNs), such
 
 __ResNet18 Architecture__: ResNet18 is a variant of the ResNet (Residual Networks) family, designed to address the vanishing gradient problem in deep networks by introducing residual connections. This architecture allows for the training of deeper networks without performance degradation, making it effective for image classification tasks.
 
+<img src="imgs/image-2.png" alt="RESNET18" width="500" height="150">
+
 __Serverless Deployment with RunPod__: Deploying the trained model as a serverless application using RunPod allows for scalable and efficient inference. RunPod's serverless platform enables the model to handle varying loads without the need for manual scaling, ensuring that resources are utilized effectively.
 
 ## Conclusion
