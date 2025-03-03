@@ -1,57 +1,28 @@
-We are going to use a ResNet18
-We use an HPC server of the uni lu to train the model
+# Pneumonia Classifier
+## Overview
+This project aims to develop a deep learning model capable of detecting pneumonia from chest X-ray images. Leveraging a ResNet18 architecture, the model is trained to distinguish between normal and pneumonia-affected lungs. The training process utilizes high-performance computing (HPC) resources to handle the computational demands of deep learning. Additionally, the model is deployed as a serverless application using RunPod, enabling scalable and efficient inference.
 
-enter to the HPC, and get a cluster with a GPU
+## Technologies Used
+- __Python__: The primary programming language for scripting and model development.
+- __PyTorch__: A deep learning framework used to build and train the ResNet18 model.
+- __Flask__: A micro web framework employed to create a web-based interface for the classifier. 
+- __Conda__: An environment management system to handle dependencies and package installations.
+- __High-Performance Computing (HPC)__: Utilized to accelerate the training process by leveraging powerful computational resources.
+- __RunPod__: A platform for deploying serverless GPU applications, facilitating scalable and efficient model inference.
 
-```  si-gpu ``` 
+## Theory 
+__Deep Learning in Medical Imaging__: Convolutional Neural Networks (CNNs), such as ResNet18, have shown significant promise in medical image analysis. These networks can automatically and adaptively learn spatial hierarchies of features from input images, making them suitable for tasks like pneumonia detection from chest X-rays.
 
-Install conda if not installed
+__ResNet18 Architecture__: ResNet18 is a variant of the ResNet (Residual Networks) family, designed to address the vanishing gradient problem in deep networks by introducing residual connections. This architecture allows for the training of deeper networks without performance degradation, making it effective for image classification tasks.
 
-```bash
-(node)$> wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-(node)$> chmod u+x Miniconda3-latest-Linux-x86_64.sh
-(node)$> ./Miniconda3-latest-Linux-x86_64.sh
-```
+__Serverless Deployment with RunPod__: Deploying the trained model as a serverless application using RunPod allows for scalable and efficient inference. RunPod's serverless platform enables the model to handle varying loads without the need for manual scaling, ensuring that resources are utilized effectively.
 
-The installation will modify your .bashrc to make conda directly available after each login. To activate the changes now, run
+## Conclusion
+The development of a pneumonia classifier using deep learning techniques, particularly with architectures like ResNet18, demonstrates the potential of AI in assisting medical diagnostics. By leveraging HPC resources, the training process becomes more efficient, allowing for the handling of large datasets and complex models. Deploying the trained model as a serverless application using RunPod further enhances accessibility and scalability, enabling healthcare professionals to utilize the tool in real-time clinical settings. Continued advancements in this field hold promise for improving patient outcomes through timely and accurate disease detection.
 
-```bash
-(node)$> source ~/.bashrc
-```
+<img src="imgs/image.png" alt="PNEUMONIA" width="500" height="500">
 
-Create an environment
 
-```bash
-(node)$> conda create -n python_tutorial
-(node)$> conda activate python_tutorial
-```
-install pip
-```bash
-conda install pip
-```
-Install the requirements
-```bash
-pip install -r requirements.txt
-```
+<img src="imgs/image-1.png" alt="NORMAL" width="500" height="500">
 
-To train the model, both of the script and the data need to be in the same directory, in this case:
 
-__train_pneumonia/__
-
-After running the script:
-
-```bash
-python train_model.py
-```
-
-We wait for it to finish and save the weights as: __pneumonia_classifiers.pth__
-
-Then we will create a pod on __runpod.io__ to handle the serverless application and also we will dockerize the application. 
-
-This will allow us to create a serverless application. To upload images from chest xrays and classify them wheter they have PNEUMONIA or NOT.
-
-![alt text](image-2.png)
-
-![alt text](image-1.png)
-
-The model was a CNN with a train accuracy score of 94%
